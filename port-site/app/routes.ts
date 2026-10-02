@@ -4,4 +4,5 @@ export default [
 	index("routes/home.tsx"),
 	route("cuidado-amigo", "routes/cuidado-amigo.tsx"),
 	route("mercado-publico", "routes/mercado-publico.tsx"),
+	route("saberes-senado", "routes/saberes-senado.tsx"),
 ] satisfies RouteConfig;

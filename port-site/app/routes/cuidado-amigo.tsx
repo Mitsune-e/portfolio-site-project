@@ -1,4 +1,5 @@
 import type { Route } from "./+types/cuidado-amigo";
+import { ProjectDetailLayout } from "../components/project-detail-layout";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -12,20 +13,12 @@ export function meta({}: Route.MetaArgs) {
 
 export default function CuidadoAmigo() {
   return (
-    <main className="container py-5 project-detail">
-      <p>
-        <a href="/#projects" className="btn btn-outline-secondary">
-          &larr; Back to portfolio
-        </a>
-      </p>
-      <header className="text-center py-4">
-        <h1 className="display-4 mb-4">Cuidado Amigo</h1>
-        <p className="lead mb-0">
-          Projeto de tese que oferece uma plataforma para ajudar idosos a
-          acessarem cuidadores e outros tipos de serviços.
-        </p>
-      </header>
-
+    <ProjectDetailLayout
+      title="Cuidado Amigo"
+      summary="Projeto de tese que oferece uma plataforma para ajudar idosos a acessarem cuidadores e outros tipos de serviços."
+      technologies={["Dart", "Firebase", "Flutter", "C++", "CMake", "HTML"]}
+      technologyHeading="Tecnologias Utilizadas"
+    >
       <section className="py-4">
         <h2>Descrição</h2>
         <p>
@@ -60,18 +53,6 @@ export default function CuidadoAmigo() {
         </a>
       </p>
 
-      <section className="py-4">
-        <h2 className="mb-4">Tecnologias Utilizadas</h2>
-        <div className="d-flex flex-wrap gap-2">
-          {["Dart", "Firebase", "Flutter", "C++", "CMake", "HTML"].map(
-            (technology) => (
-              <span className="badge text-bg-primary" key={technology}>
-                {technology}
-              </span>
-            ),
-          )}
-        </div>
-      </section>
-    </main>
+    </ProjectDetailLayout>
   );
 }
